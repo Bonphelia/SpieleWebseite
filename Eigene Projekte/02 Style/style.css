@@ -1,0 +1,54 @@
+#game-area{
+    width:800px;
+    height:500px;
+    border: solid white 2px;
+    margin-right: auto;
+    margin-left: auto;
+    position:relative;
+
+    /*overflow:hidden; ist dafür da damit es außerhalb des Bildschirms unsichtbar wird*/
+}
+
+
+#player{
+    width:40px;
+    height:40px;
+    background-color: brown;
+
+    position:absolute;
+
+    bottom:100px;
+    left:380px;
+}
+
+
+.enemy{
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    position:absolute;
+}
+
+
+body{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#himmel{
+    height: 400px;
+    background-color: aqua;
+}
+
+#boden{
+    height: 100px;
+    background-color: green;
+}
+
+#score{
+    font-size: 24px;
+    margin-top: 30px;
+}
