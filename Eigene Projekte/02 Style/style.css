@@ -22,13 +22,16 @@
 }
 
 
-.enemy{
+#enemy{
     width:20px;
     height:20px;
 
     border-radius:50%;
+    background-color: orange;
 
     position:absolute;
+    bottom:400px;
+    left:380px;
 }
 
 
