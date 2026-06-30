@@ -1,45 +1,51 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../02 Style/style.css">
-
 </head>
 <body>
 
-
-
-<!--Spielfenster-------------------------------------------------------->
 <div id="game-wrapper">
-
-    <h1>Dodge or Catch</h1>
+    <h1>Dodge & Catch</h1>
 
     <div id="hud">
         <div id="lives"></div>
     </div>
 
     <div id="game-area">
+
+        <!--Noch bevor das Spiel beginnt-->
+        <div id="menu-overlay" class="overlay">
+            <h2>Wähle einen Spielmodus:</h2>
+            <div id="mode-grid">
+                <button class="mode-btn active" onclick="selectMode('AUSWEICHEN')">Bälle ausweichen</button>
+                <button class="mode-btn" onclick="selectMode('FANGEN')">Bälle fangen</button>
+                <button class="mode-btn locked" disabled>Modus 3 (Bald)</button>
+                <button class="mode-btn locked" disabled>Modus 4 (Bald)</button>
+            </div>
+            <button id="start-btn" onclick="startGame()">SPIEL STARTEN</button>
+        </div>
+
+        <!--Nach Click auf ESC-Button-->
+        <div id="pause-overlay" class="overlay hidden">
+            <h2>Spiel pausiert</h2>
+            <p>Drücke ESC zum Weiterspielen</p>
+            <div class="settings-dummy">
+                <label>Lautstärke: <input type="range" min="0" max="100" value="50"></label>
+            </div>
+            <button onclick="backToMenu()">Hauptmenü</button>
+        </div>
+
         <div id="himmel"></div>
         <div id="enemy"></div>
         <div id="player"></div>
         <div id="boden"></div>
     </div>
 
-    <div id="score">
-        Score: 0
-    </div>
-
+    <div id="score">Score: 0</div>
 </div>
-<!--Spielfenster-------------------------------------------------------->
-
 
 <script src="../03 Logik/script.js"></script>
 </body>
-
-
-<!--Später noch Start button und Stop button bzw bei ESC einbinden
-    Mit rechts und links arrow den quadrat bewegen (bei start
-    verscheindet es dann)-->
-
-<!--Spieler muss einzelne Bälle fangen-->
-
 </html>

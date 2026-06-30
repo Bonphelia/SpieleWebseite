@@ -1,57 +1,127 @@
-#game-area{
-    width:800px;
-    height:500px;
+#game-area {
+    width: 800px;
+    height: 500px;
     border: solid white 2px;
     margin-right: auto;
     margin-left: auto;
-    position:relative;
-
-    /*overflow:hidden; ist dafür da damit es außerhalb des Bildschirms unsichtbar wird*/
+    position: relative;
+    overflow: hidden; /* Aktiviert, damit Overlays exakt reinpassen */
 }
 
-
-#player{
-    width:40px;
-    height:40px;
-    background-color: brown;
-
-    position:absolute;
-
-    bottom:100px;
-    left:380px;
+/* Overlays für Menü und Pause */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Halbdurchsichtig schwarz */
+    z-index: 10;
+    display: block;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
+.hidden {
+    display: none !important;
+}
 
-#enemy{
-    width:20px;
-    height:20px;
+/* Das gewünschte CSS Grid für die Modi */
+#mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+}
 
-    border-radius:50%;
+.mode-btn {
+    background-color: #333;
+    color: white;
+    border: 2px solid #555;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.mode-btn:hover {
+    background-color: #555;
+}
+
+.mode-btn.active {
     background-color: orange;
-
-    position:absolute;
-    bottom:400px;
-    left:380px;
+    border-color: white;
+    color: black;
+    font-weight: bold;
 }
 
+.mode-btn.locked {
+    background-color: #111;
+    color: #444;
+    border-color: #222;
+    cursor: not-allowed;
+}
 
-body{
+/* Großer Start Button */
+#start-btn {
+    background-color: green;
+    color: white;
+    font-size: 22px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#start-btn:hover {
+    background-color: darkgreen;
+}
+
+.settings-dummy {
+    margin: 20px;
+}
+
+/* Bestehendes CSS bleibt gleich */
+#player {
+    width: 40px;
+    height: 40px;
+    background-color: brown;
+    position: absolute;
+    bottom: 100px;
+    left: 380px;
+}
+
+#enemy {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: orange;
+    position: absolute;
+    top: 0px;
+    left: 380px;
+}
+
+body {
     background-color: black;
     color: white;
     text-align: center;
 }
 
-#himmel{
+#himmel {
     height: 400px;
     background-color: aqua;
 }
 
-#boden{
+#boden {
     height: 100px;
     background-color: green;
 }
 
-#score{
+#score {
     font-size: 24px;
     margin-top: 30px;
 }
